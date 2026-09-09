@@ -1,0 +1,11 @@
+{
+  "name": "gord-tables",
+  "displayName": "GORD Tables",
+  "description": "Excel-таблицы и Google Таблицы в фирменном стиле PR-агентства GORD: логотип сверху, шрифт Geologica, красная линейка, серая шапка, статусы с подсветкой. Пресеты листов: дашборд, смета, план, контакты, логистика, тайминг, чек-листы, гости, разбор, медиалист, блогеры, road map, публикации.",
+  "version": "1.0.0",
+  "author": { "name": "firelacri-art" },
+  "homepage": "https://github.com/firelacri-art/GORD_TABLES",
+  "repository": "https://github.com/firelacri-art/GORD_TABLES",
+  "license": "MIT",
+  "keywords": ["excel", "xlsx", "google-sheets", "gord", "pr-agency", "tables", "openpyxl"]
+}

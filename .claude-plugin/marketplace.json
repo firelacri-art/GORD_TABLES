@@ -1,0 +1,17 @@
+{
+  "name": "gord-tables",
+  "owner": { "name": "firelacri-art" },
+  "plugins": [
+    {
+      "name": "gord-tables",
+      "source": "./",
+      "displayName": "GORD Tables",
+      "description": "Excel-таблицы и Google Таблицы в фирменном стиле PR-агентства GORD (логотип, Geologica, пресеты листов проекта и отчёта).",
+      "version": "1.0.0",
+      "author": { "name": "firelacri-art" },
+      "homepage": "https://github.com/firelacri-art/GORD_TABLES",
+      "license": "MIT",
+      "keywords": ["excel", "xlsx", "google-sheets", "gord", "tables"]
+    }
+  ]
+}

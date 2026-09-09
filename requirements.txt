@@ -1,0 +1,5 @@
+# Генерация и проверка таблиц GORD
+openpyxl>=3.1
+Pillow>=10
+# Необязательно: PNG-рендер страниц при verify --render (плюс LibreOffice в системе)
+pypdfium2>=4

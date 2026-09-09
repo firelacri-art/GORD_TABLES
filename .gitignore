@@ -1,0 +1,8 @@
+.claude/settings.local.json
+__pycache__/
+*.pyc
+render/
+*.xlsx
+!skills/gord-tables/scripts/examples/*.xlsx
+.DS_Store
+Thumbs.db
