@@ -339,6 +339,20 @@ def parse_value(v):
     return v
 
 
+def row_height_for(values, columns) -> float:
+    """Высота строки по самой длинной ячейке: ~1.1 символа на единицу ширины колонки, 12.5 pt на строку текста."""
+    lines = 1
+    if isinstance(values, dict):
+        for col in columns:
+            v = values.get(col["header"])
+            if isinstance(v, str) and col.get("wrap", True):
+                width = max(col.get("width", 20), 4)
+                for chunk in v.split("\n"):
+                    lines = max(lines, -(-len(chunk) // int(width * 1.1)) if chunk else 1)
+                lines = max(lines, v.count("\n") + 1)
+    return ROW_BODY if lines <= 1 else max(ROW_BODY, 12.5 * lines + 3)
+
+
 def add_logo(ws, logo_path: Path, cell_row: int, big: bool = False, col_off_px: int = 15, row_off_px: int = 18):
     """Логотип над таблицей: якорь в колонке A, строка cell_row (1-based)."""
     img = XLImage(str(logo_path))
@@ -436,7 +450,7 @@ def build_table_sheet(wb, spec: dict, logo: Path, project: str):
         nonlocal n
         border_color = BLACK if is_filled else GREY_LINE
         row_fill = fill(GREY_ZEBRA) if (zebra and idx % 2 == 1) else None
-        ws.row_dimensions[r].height = ROW_BODY
+        ws.row_dimensions[r].height = row_height_for(values, columns)
         if numbered:
             cell = ws.cell(row=r, column=num_col, value=idx + 1)
             cell.font = font(SIZE_BODY, bold=True); cell.border = box(border_color)
